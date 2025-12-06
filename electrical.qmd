@@ -1,0 +1,21 @@
+---
+title: "Toothless Candy Bucket Project"
+---
+
+# Overall Block Diagram
+
+# MCU Circuits
+## 1. Capacitive Touch Sensor Circuit
+
+
+## 2. IR Proximity Sensor Circuit 
+The MCU also deals with detecting hand placement into the mouth using an IR Proximity sensor. The sensor works
+
+## 3. DFPlayer Mini Circuit
+
+
+# FPGA Circuits
+## 1. Servo Motor Circuit
+
+## 2. LED Array Circuit
+

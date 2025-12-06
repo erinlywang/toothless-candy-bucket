@@ -13,8 +13,12 @@ website:
         text: Electrical Design
       - href: mechanical.qmd
         text: Mechanical Design
+      - href: software.qmd
+        text: Software Design
       - href: testbenches.qmd
         text: Testbenches
+      - href: future.qmd
+        text: Future Work
       - href: references.qmd
         text: References
       - href: members.qmd
