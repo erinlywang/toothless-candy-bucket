@@ -1,0 +1,19 @@
+---
+title: "Toothless Candy Bucket Project"
+image: images/headshot.jpg
+about:
+    template: jolla
+    links:
+        - icon: github
+          text: Github
+          href: https://github.com/erinlywang
+
+---
+
+# Project Abstract/Introduction
+Caiya and Erin designed an interactive candy bucket inspired by the lovable dragon, Toothless, from the film *How to Train Your Dragon*. Taken from the iconic scene where Toothless places his snout on Hiccup's outstretched palm, the candy bucket opens its mouth when the nose is touched and plays a clip from the awe-inspiring theme song, "Test Drive".
+
+![Scene from *How to Train Your Dragon of Toothless trusting Hiccup enough to touch his nose.]()
+
+# Open Source Code
+The link to all code used for this project can be found on Github [here](https://github.com/erinlywang/e155-finalproject). 
