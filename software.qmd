@@ -1,0 +1,21 @@
+---
+title: "Toothless Candy Bucket Project"
+---
+
+
+# MCU Code
+All MCU Code was done on SEGGER Embedded Studio (IDE) which has a C development environment with a built-in editor and debugger for J-link integration to program the MCU itself. 
+
+## 1. Capacitive Touch Sensor Code
+
+## 2. IR Proximity Sensor Code
+
+## 3. DFPlayer Mini Code
+
+
+# FPGA Code
+All FPGA Code (and testbenches) was done on Lattice Raidant which uses Hremardware Description Languages, in this case System Verilog. The software is able to synthesize and then use the Radiant Programmer tool to program the FPGA itself.
+
+## 1. Servo Motor Code
+
+## 2. LED Array Code
