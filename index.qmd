@@ -13,9 +13,10 @@ about:
 # Project Introduction
 Caiya and Erin designed an interactive candy bucket inspired by the lovable dragon, Toothless, from the film *How to Train Your Dragon*. Taken from the iconic scene where Toothless places his snout on Hiccup's outstretched palm, the candy bucket opens its mouth when the nose is touched and plays a clip from the awe-inspiring theme song, "Test Drive".
 
-![Scene from *How to Train Your Dragon of Toothless trusting Hiccup enough to touch his nose.]()
+![Scene from *How to Train Your Dragon of Toothless trusting Hiccup enough to touch his nose.]{{< video https://www.youtube.com/watch?v=Vv9KJYUnVvA start="222" >}}
 
 # Project Abstract
+The project takes inspiration from Halloween candy buckets to create a Toothless suprise complete with music, lights, and an interactive jaw mechanism. The final working prototype starts with the participant rubbing Toothless’ nose to trigger the capacitive touch sensor which will trigger the servo motor to open the mouth while the theme music plays via the DFP in the background. Then as the participant goes into the mouth to grab a piece of candy, the IR proximity sensor is triggered and the servo motor is set to close on the participants hand while a ROAR plays on the DFP in the background before going back to it’s initial position. The project also includes an E-stop button to reset the process. The touch sensor and DFP player are interfaced via the MCU as well as the IR proximity sensor through a Analog-to-Digital Converter (ADC). The servo motor and LEDs are interfaced via the FPGA where the LEDs recieve a SRAM signal from where the embedded LED show memories are stored. 
 
 # Open Source Code
 The link to all code used for this project can be found on Github [here](https://github.com/erinlywang/e155-finalproject). 
