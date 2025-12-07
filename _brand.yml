@@ -1,0 +1,16 @@
+defaults:
+  bootstrap:
+    defaults:
+      navbar-bg: "#74b2e5ff"
+      navbar-fg: white
+      navbar-hl: black
+
+typography:
+  fonts:
+    - family: Rubik
+      source: google
+
+  base: Rubik
+  headings:
+    family: Rubik
+    weight: 400
