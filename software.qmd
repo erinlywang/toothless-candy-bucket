@@ -7,6 +7,11 @@ title: "Toothless Candy Bucket Project"
 All MCU Code was done on SEGGER Embedded Studio (IDE) which has a C development environment with a built-in editor and debugger for J-link integration to program the MCU itself. 
 
 ## 1. Capacitive Touch Sensor Code
+The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today. 
+
+The Capacitive Touch Sensor is integrated through GPIO onto the MCU board and that signal is connected electrically to the FPGA from pin PA5 to P47. Thus being able to tell the Servo Motor and LEDs to trigger when the signal goes high.
+
+One of the main difficulties with this sensor was integrating it mechanically as it had to be detectable through the 3D printed PLA that we used for Toothless.
 
 ## 2. IR Proximity Sensor Code
 
@@ -16,6 +21,12 @@ All MCU Code was done on SEGGER Embedded Studio (IDE) which has a C development 
 # FPGA Code
 All FPGA Code (and testbenches) was done on Lattice Raidant which uses Hremardware Description Languages, in this case System Verilog. The software is able to synthesize and then use the Radiant Programmer tool to program the FPGA itself.
 
+# Overall Block Diagram
+The complete block diagram can be found below:
+
+![Complete Block Diagram for FPGA](images/CompleteBlockDiagram.jpg)
+
 ## 1. Servo Motor Code
+
 
 ## 2. LED Array Code

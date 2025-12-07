@@ -1,0 +1,13 @@
+# Reference Links
+
+
+
+# Acknowledgements
+
+We'd like to thank everyone who made this project possible.
+
+Thank you Prof Spencer for pushing us in this class while always being so supportive and understanding. 
+
+Thank you to Xavier Walter for always making time to come help with any computer and electrical issue we could have. This class would not be possible without you.
+
+Thank you to all the TAs (Neil Chulani, Kavi Dey, Troy Kaufman, and, Vikram Krishna) for helping using with debugging various circuits and pieces of code. In particular, thank you to Kavi for all the help with the Analog-to-Digital Converter (ADC).
