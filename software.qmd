@@ -7,8 +7,6 @@ title: "Toothless Candy Bucket Project"
 All MCU Code was done on SEGGER Embedded Studio (IDE) which has a C development environment with a built-in editor and debugger for J-link integration to program the MCU itself. 
 
 ## 1. Capacitive Touch Sensor Code
-The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today. 
-
 The code uses GPIO signals to determine when the capvalue is high by digitally reading the pin it's connected to. When that value goes high, we digitally write to another GPIO pin (PA5) that is connected electrically to an FPGA pin (P47). Thus being able to tell the Servo Motor and LEDs to trigger when the signal goes high and additionally playing the theme song on the DFP player.
 
 This is done within an FSM under state "STATE_WAIT_FOR_CAP" so that after the head opens up we can move to state "STATE_IR_MODE" where we no longer look for signals from the capacitive touch sensor until Toothless is reset for a new user. 
@@ -39,8 +37,9 @@ For more details on specific commands, this is the datasheet we referenced:
 
 [DFPlayer Mini Datasheet with UART Instructions](https://picaxe.com/docs/spe033.pdf)
 
-Then in the while 
+Then in the while loop, if the Capacitive Touch Sensor is high then after the FPGA signal is sent, the DFP_PlayFolderTrack() function is called to play the theme song Test Drive that's labeled 001.mp3 in the 01 folder in the TF card. 
 
+Similarly when the IR Proximity Sensor is high then after the FPGA signal is sent then the Roar sound on the 002.mp3 file is played. 
 
 # FPGA Code
 All FPGA Code (and testbenches) was done on Lattice Raidant which uses Hremardware Description Languages, in this case System Verilog. The software is able to synthesize and then use the Radiant Programmer tool to program the FPGA itself.
@@ -51,6 +50,17 @@ The complete block diagram can be found below:
 ![Complete Block Diagram for FPGA. Note all wires with the sane name are connected (e.g. int_osc and reset are shared across all modules)](images/CompleteBlockDiagram.jpg)
 
 ## 1. Servo Motor Code
+The Servo Motor was coded through a few different modules with various FSMs (Finite State Machines). In the file angledecoder the servo motor takes in those signals from the sensors via variables captouch and irblock to know what angle to set. When the Capacitive Touch Sensor is triggered the angle needed to be set so that the head was fully open and for the IR Proximity sensor the head needed to be set to an angle that makes it feel like the users' hand is being bitten. 
 
+So in this FSM there are three states CLOSED, OPENED, and SLIGHT. In the next state logic we start in the CLOSED state and then when the Capacitive Touch sensor goes high, the next state is OPENED and then it toggles between the OPENED and SLIGHT states depending on the IR Proximity Sensor. It only goes back to the CLOSED state if the estop is triggered. 
+
+For output logic, each state was set to different angles. In the CLOSED state the angle is set to 8'd30 for 30 degrees. In the OPENED state it was set to 8'd150 for 150 degrees. In the SLIGHT state the angle is set to 8'd90 for 90 degrees. These aren't the exact angles we ended up using but they are used to differentiate between the different states in the pwmgen. 
+
+Then goes to the pwmgen module that takes in the clock from the HSOSC (High Speed Oscillator) as well as the angle for each of the respective states. In this module there's another FSM that based on the value of the angle (i.e 8'd30, 8'd150 or 8'd90) the counter is set to be different values to send different length pulses to the servo motor to move it to various angles depending on the state from angledecoder.
+
+We used a seperate test file that only sent a pwm value via a button to test the different angles on Toothless' head. 
 
 ## 2. LED Array Code
+The LED Array used SRAM (Static Rnadom-Access Memory) loaded on the bit stream to play various LED shows. The led_pattern module also used an FSM with states OFF, PLAYING, ROARING, and ON. The LED pattern was stored as an 11 bit string for the 5 white LEDs, 5 green LEDs, and 1 purple LED strip. 
+
+When it receives a signal from captouch it goes to state PLAYING and pkays the memory of the green LEDs slowly turning on in sequence followed by the white ones and then ending with all white LEDs and the purple LED strip on. Whereas in the ROARING state it flashes the green LEDs on and off. 
