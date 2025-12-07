@@ -1,21 +1,46 @@
 ---
-title: "Toothless Candy Bucket Project"
+title: "Electrical Schematics and Design"
 ---
 
-# Overall Block Diagram
+# Overall Schematic 
 
 # MCU Circuits
 ## 1. Capacitive Touch Sensor Circuit
 
 
 ## 2. IR Proximity Sensor Circuit 
-The MCU also deals with detecting hand placement into the mouth using an IR Proximity sensor. The sensor works
+The MCU also deals with detecting hand placement into the mouth using an IR Proximity sensor. The sensor works by placing an [IR LED and IR detector pair](insert link) next to each other such that the IR detector takes the IR light that reflects off an object that comes near the top of the IR light. The closer the object, the stronger the IR intensity of the reflection. 
+
+![Sketch demonstrating the IR LED reflecting off an object hovering over the LED into the IR detector. The closer the hand, the strong the IR intensity of the reflection and the more current is produced by the IR-PD.](images/irreflect.jpg)
+
+The circuit is heavily inspired by [AutoDesk Instructuable's Proximity Sensor](https://www.instructables.com/How-to-Make-a-Proximity-Sensor/), but without a potentiometer for changing the distance of the object away from the sensor that the circuit can detect. The circuit schematic is shown below. Note that the **IR LED is in the opposite direction as the IR Photodetector (IR-PD)**. 
+
+![Electrical schematic for the IR proximity sensor.The InfraRed light reflected into the IR photo-detector produces a current that increases the voltage over the resistor in series with the IR-PD that is then compared by the LM385 op-amp.  The op-amp configuration provides a non-inverting gain of approximately 45. The pins for the LM385 op-amp and the input signal into the STM are labeled. The 5V and GND are sourced from the STM. The 5V and GND connection and all other connections into the STM are not pictured in this image.](images/ircircuit.jpg)
+
+The more InfraRed light that falls on the IR-PD, the more current that flows through the PD. This current then flows through the 10kΩ resistor connecting the cathode of the PD to ground which increases the voltage potential across the resistor that is seen by the positive terminal of the LM358 op-amp (Pin 2). The op-amp is configured with a non-inverting gain based on the resistorconnected between vout and the negative terminal (R~1~) and the resistor connected between the negative terminal of the op-amp to ground (R~2~). The gain of the non-inverting op-amp (A) follows the equation below.
+
+$$
+A_{non-inverting} = 1 + \frac{R_{1}}{R_{2}} = 1 + \frac{21kΩ}{470Ω} = 44.7
+$$
+
+In the schematic, because we used R~1~ = 21kΩ and R~2~=470Ω, the gain of our circuit was around 45. This allowed for a hand near the sensor to be detected but the roof of the mouth to not be detected when the jaw was open. For debugging the circuit, we recommend to place an LED in series with a resistor to ground at the voltage output of the op-amp. The LED brightness should increase as the object gets closer to the LED pair. 
 
 ## 3. DFPlayer Mini Circuit
 
 
 # FPGA Circuits
 ## 1. Servo Motor Circuit
+One issue we ran into was the power the servo motor drained when moving which caused the music on the DFPlayer mini to cut out when the servo was in action and meant that we couldn't play music at the same time that the jaw opened. To circumvent this, we powered the servo motor with a 5V power supply separate from the 5V provided by the MCU. It is important to **connect the ground of the servo and the ground of the power supply to the same ground as the MCU and FPGA such that they all share common ground**. The issue of common ground ended up being a nasty and almost invisible problem that was hard to debug later when the circuit board and breadboard were hidden underneath our box stand. 
+
+Another way we ensured the servo inject noise into the MCU was using a non-inverting NPN open-collector buffer. This also allowed us to provde the servo with the necessary clean high and low signal for the PWM. The FPGA pins only supply 3.3V which has potential to muddle the PWM signal where the FPGA would see 3.3V as low rather than as high, thus using the two NPN transistor configuration created a non-inverting buffer that pulled the 3.3V signal to a 5V signal. The schematic for the non-inverting, two NPN buffer is below.
+
+![Electrical schematic for the servo motor. The servo is powered with a separate 5V power supply. The pwm signal from the FPGA goes through an NPN transistor circuit tied to 3.3V that inverts the PWM signal. Then the inverted signal goes through another NPN circuit tied to 5V that inverts the signal back to the original PWM signal and pulls the 3.3V up to 5V for the servo to cleanly read high. The 1kΩ resistor between the FPGA and the base of the transistor limits base current and protects the FPGA pin while the 4.7kΩ resistor acts as a pull-up resistor for the collector. All other connections into the FPGA including 3.3V and GND are not pictured.](images/servocircuit.jpg)
+
+The 1kΩ resistor from the FPGA pin (P12) to the base of the NPN transistor protects the FPGA pin by limiting base current while the 4.7kΩ resistor acts as a pull-up resistor for the collector. We used 2N9304 transistors which has the emitter on Pin 1, the base on Pin 2, and the collector on Pin 3 (see Figure). If using a different NPN transistor, be sure to check the transistor's pinout.
 
 ## 2. LED Array Circuit
+The LED array circuit (Figure) is simply 10 LEDs wired with a 1kΩ resistor in series to ground. The LED strip uses another 2N3904 NPN transistor that uses a signal from the FPGA to decided whether or not to turn the light strip on. We had to use a separate power supply that provided 12V as the 5V from the MCU and the 3.3V from the FPGA were too low to power the LED strip. 
 
+![Electrical circuit for the LED array circuit. Each individual LED is connected to a 1kΩ resistor tied to ground. The first 5 LEDs are green while the other 5 are white. The LED strip is powered by a separate 12V power supply and the anode is connected to the collector of a 2N3904 transistor. The 10kΩ resistor between the FPGA and the base of the transistor limits base current and protects the FPGA pin. The emitter of the transistor is tied to ground. All other connections into the FPGA including GND are not pictured.](images/ledcircuit.jpg)
+
+It is important to note that unlike the servo motor, the LED light strip is placed in series with the voltage source such that the cathode of the light strip is attached to the positive terminal of the power supply and the anode is connected to the collector (Pin 3) of the transistor. The resistor between the FPGA pin (P13) is greater than that for the servo as the voltage being supplied from the power supply is also much greater. When programming the LEDs, the order can be chosen based on which pins you send a high signal to first. For our purposes, we lighted in a certain order but placed the LEDs not in order to create a slightly random light show. See the software design section for more details. 
