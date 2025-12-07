@@ -7,6 +7,7 @@ website:
     left:
       - href: index.qmd
         text: Home
+        icon: house-heart-fill
       - href: materials.qmd
         text: Materials
       - href: electrical.qmd
@@ -17,12 +18,14 @@ website:
         text: Software Design
       - href: testbenches.qmd
         text: Testbenches
+        icon: pen-fill
       - href: future.qmd
         text: Future Work
       - href: references.qmd
         text: References
       - href: members.qmd
         text: People
+        icon: people-fill
 
 format:
   html:
@@ -31,6 +34,13 @@ format:
       - brand
     css: styles.css
     toc: true
+    math:
+      method: mathjax
+      options:
+        autoNumber: "AMS"
+      citations: true
+    link-external-icon: true
+    code-line-numbers: true
 
 
 

@@ -5,23 +5,23 @@ title: "Mechanical CAD and Designs"
 All CAD files were printed on a Bambu Lab Design 3D printer. This greatly reduced the cost of the mechanical portion. The project will be significantly more expensive without access to a 3D printer and different colored filament. The 3D print can be painted but due to its smooth surface, the print will require sanding to hold paint. 
 
 # Dragon Body
-We sourced the Toothless CAD from a Toothless popcorn bucket online that provided the STL files. Because these files were sourced from the internet, the files did require scaling to fit the 3D printer. We had technical difficulties with the STL file as it downloaded extremely large so we scaled down to about 10% of the original size. However, if recreating this project, scale to your desired size. 
+We sourced the Toothless CAD from a Toothless popcorn bucket online that provided the STL files (@fig-dragonstl). Because these files were sourced from the internet, the files did require scaling to fit the 3D printer. We had technical difficulties with the STL file as it downloaded extremely large so we scaled down to about 10% of the original size. However, if recreating this project, scale to your desired size. 
 
-![Full Model of Dragon Head and Body on Bambu Print Plate](images/dragonstl.png)
+![Full Model of Dragon Head and Body on Bambu Print Plate](images/dragonstl.png){#fig-dragonstl}
 
 
 ## Dragon Head
-In order to detect the Capacitive Touch Sensor through the PLA, the inside of the nose was cut out using needle nose pliers, a soldering iron (not reccommended), sand paper, and pure will. The Capacitive Touch Sensor was then secured to the inside using hot glue and super glue and frequently tested to be sure it could be detected.
+In order to detect the Capacitive Touch Sensor through the PLA, the inside of the nose was cut out using needle nose pliers, a soldering iron (not reccommended), sand paper, and pure will (@fig-dragonhead). The Capacitive Touch Sensor was then secured to the inside using hot glue and super glue and frequently tested to be sure it could be detected.
 
-![Physical model showing the inside cut out where the Capacitive Touch Sensor lay](images/dragonhead.png)
+![Physical model showing the inside cut out where the Capacitive Touch Sensor lay](images/dragonhead.png){#fig-dragonhead}
 
 Since it was only printed with black PLA, the eyes were painted on with a green acrylic paint pen. 
 
 
 ## Dragon Body
-In order to let the wires pass into the dragon stand box underneath, the body was mechanically modified by drilling into the bottom with a hole saw set. 
+In order to let the wires pass into the dragon stand box underneath, the body was mechanically modified by drilling into the bottom with a hole saw set (@fig-dragonbody). 
 
-![Set Up with the hole made by the Hole Saw](images/bodymodify.png)
+![Set Up with the hole made by the Hole Saw](images/bodymodify.png){#fig-dragonbody}
 
 # Jaw Mechanism
 
@@ -31,17 +31,17 @@ We designed all of the parts based on caliper measurements that we took of the D
 
 
 ## Bottom Jaw (IR Sensor Holder)
-![CAD for the bottom jaw. The extrusion below the rectangular opening screws into the lever arm that is manipulated by the servo motor. The raised extrusion with two holes houses the IR LED and the IR-PD for the hand detection sensor. The slant on the outside rim slides into the dragon body](images/mouthbottom.png)
+![CAD for the bottom jaw. The extrusion below the rectangular opening screws into the lever arm that is manipulated by the servo motor. The raised extrusion with two holes houses the IR LED and the IR-PD for the hand detection sensor. The slant on the outside rim slides into the dragon body](images/mouthbottom.png){#fig-mouthbottom}
 
 ## Top Jaw (Servo Holder)
-![CAD for the top jaw. The rectangular extrusion holds the servo motor with M2 screws. The rectangular extrusion is curved on the end to fit the curved inside of the head.](images/mouthroof.png)
+![CAD for the top jaw. The rectangular extrusion holds the servo motor with M2 screws. The rectangular extrusion is curved on the end to fit the curved inside of the head.](images/mouthroof.png){#fig-mouthroof}
 
 ## Lever Arm
-![CAD for the lever arm that screws into the servo motor and into the bottom jaw. Due to the bottom jaw being screwed on to the heavier dragon body, when the servo pushes the lever arm down, the top jaw opens up.](images/servoarm.png)
+![CAD for the lever arm that screws into the servo motor and into the bottom jaw. Due to the bottom jaw being screwed on to the heavier dragon body, when the servo pushes the lever arm down, the top jaw opens up.](images/servoarm.png){#fig-servoarm}
 
 # Dragon Stand
 
-::: {#fig-elephants layout-ncol=2}
+::: {#fig-dragonstand layout-ncol=2}
 
 ![Dragon Stand Left](images/dragonstandleft.png)
 
@@ -55,5 +55,5 @@ The bottom of the dragon and top of the dragon stand also had pieces of velcro a
 
 Although a very fun part of the project, the mechanical part was unfortuantely what broke on us for demo day. As a user tried to trigger the Capacitive Touch Sensor they pushed down on the head too hard while the Servo Motor was trying to move which meant the hinge connecting the dragon head to the body broke off. We'd like to thank hot glue and elastic hairbands that allowed us to make a quick recovery. 
 
-![Happy Toothless](images/happy.png)
-![Hungry Toothless](images/hungry.png)
+![Happy Toothless](images/happy.png){#fig-happy}
+![Hungry Toothless](images/hungry.png){#fig-hungry}
