@@ -11,8 +11,6 @@ The code uses GPIO signals to determine when the capvalue is high by digitally r
 
 This is done within an FSM under state "STATE_WAIT_FOR_CAP" so that after the head opens up we can move to state "STATE_IR_MODE" where we no longer look for signals from the capacitive touch sensor until Toothless is reset for a new user. 
 
-One of the main difficulties with this sensor was integrating it mechanically as it had to be detectable through the 3D printed PLA that we used for Toothless.
-
 ## 2. IR Proximity Sensor Code
 The IR Proximity Sensor produces a voltage when a hand comes near the IR LED which sends a signal to a GPIO pin (PA0) for the Analog-to-Digital Converter to read on the MCU. 
 

@@ -6,11 +6,15 @@ title: "Electrical Schematics and Design"
 
 # MCU Circuits
 ## 1. Capacitive Touch Sensor Circuit
-The MCU uses a Capacitive Touch Sensor to detect a user's hand to trigger the start of the whole sequence. 
+The MCU uses a Capacitive Touch Sensor to detect a user's hand to trigger the start of the whole sequence. The GPIO receives that signal on PA8 which simulata neously triggeres PA5 which is electrically connected to P47 to send a signal to the FPGA components as well.
 
 The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today. 
 
+We tested it by connecting to a multimeter to see the max voltage that could be received on the GPIO pin when detecting a finger touch. 
 
+![Electrical schematic for the Capacitive Touch sensor. The exact module is a TTP223 Touch Sensor Module and can be found on DigiKey and Amazon. The pins for the input signal into the STM are labeled. The 5V and GND are sourced from the STM. The 5V and GND connection and all other connections into the STM are not pictured in this image.](images/capschematic.jpeg)
+
+One of the main difficulties with this sensor was integrating it mechanically as it had to be detectable through the 3D printed PLA that we used for Toothless. So there were many moments where we thought there was something going wrong on the electrical and software side when it was was the mechanical.
 
 ## 2. IR Proximity Sensor Circuit 
 The MCU also deals with detecting hand placement into the mouth using an IR Proximity sensor. The sensor works by placing an [IR LED and IR detector pair](insert link) next to each other such that the IR detector takes the IR light that reflects off an object that comes near the top of the IR light. The closer the object, the stronger the IR intensity of the reflection. 
