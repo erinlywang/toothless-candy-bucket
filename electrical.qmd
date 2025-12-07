@@ -34,7 +34,15 @@ $$
 In the schematic, because we used R~1~ = 21kΩ and R~2~=470Ω, the gain of our circuit was around 45. This allowed for a hand near the sensor to be detected but the roof of the mouth to not be detected when the jaw was open. For debugging the circuit, we recommend to place an LED in series with a resistor to ground at the voltage output of the op-amp. The LED brightness should increase as the object gets closer to the LED pair. 
 
 ## 3. DFPlayer Mini Circuit
+One of the big issues for the DFPlayer was that the RX and TX channels were swapped for the longest time. Although a seemingly simple mistake, it was one that tripped us up for a while because there wasn't a proper datasheet to reference of each of the DFPlayers pin outs. Additionally the DFPlayer works on its own independently so if all your files are named and numbered correctly (which was also a big issue at first) you can use the ADKEY and IO ports to trigger play different segments on the TF card. It was unclear for a while whether it was recieving an electrical signal or what we were producing via the software's UART signals. 
 
+The circuit itself is largely inspired by sample circuits on the [Picaxe Datasheet](https://picaxe.com/docs/spe033.pdf) that we later found as well as a [MP3-TF-16p Tutorial on Youtube](https://www.youtube.com/watch?v=7WiSeQxb1bU). 
+
+Since the DFPlayer was completely controlled via the MCU no signal was sent to the FPGA.
+
+![Electrical schematic for the DFP Mini Player. The DFPlayer had pins that directly correleated to RX and TX for UART serial input/output. The capacitor was to reduce noise like what we had similarly seen on Lab 4. The pins for the input signal into the STM are labeled. The 5V and GND are sourced from the STM. All other connections into the STM are not pictured in this image.](images/dfpschematic.jpeg)
+
+One big thing we learned was **to use stranded wire for as many things as we can** because the speaker and various connections often broke off without notice during the debugging process. 
 
 # FPGA Circuits
 ## 1. Servo Motor Circuit
