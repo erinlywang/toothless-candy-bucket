@@ -6,6 +6,10 @@ title: "Electrical Schematics and Design"
 
 # MCU Circuits
 ## 1. Capacitive Touch Sensor Circuit
+The MCU uses a Capacitive Touch Sensor to detect a user's hand to trigger the start of the whole sequence. 
+
+The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today. 
+
 
 
 ## 2. IR Proximity Sensor Circuit 

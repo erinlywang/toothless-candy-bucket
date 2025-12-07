@@ -7,8 +7,6 @@ title: "Toothless Candy Bucket Project"
 All MCU Code was done on SEGGER Embedded Studio (IDE) which has a C development environment with a built-in editor and debugger for J-link integration to program the MCU itself. 
 
 ## 1. Capacitive Touch Sensor Code
-The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today. 
-
 The code uses GPIO signals to determine when the capvalue is high by digitally reading the pin it's connected to. When that value goes high, we digitally write to another GPIO pin (PA5) that is connected electrically to an FPGA pin (P47). Thus being able to tell the Servo Motor and LEDs to trigger when the signal goes high and additionally playing the theme song on the DFP player.
 
 This is done within an FSM under state "STATE_WAIT_FOR_CAP" so that after the head opens up we can move to state "STATE_IR_MODE" where we no longer look for signals from the capacitive touch sensor until Toothless is reset for a new user. 
