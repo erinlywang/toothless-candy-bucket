@@ -1,11 +1,8 @@
 # The Team
 
----
-title: "Caiya Coggshall"
-image: images/headshot.png
-about: 
-    template: jolla
----
+# Caiya Coggshall HMC '26
+
+![]()
 
 **Caiya Coggshall** is a senior engineering major at [Harvey Mudd College](https://hmc.edu) with a concentration in Mechanical, Manufacturing, and Computer systems.
 
@@ -13,12 +10,9 @@ about:
 
 She’s drawn to projects that build real, physical systems and approach every problem with curiosity, attention to detail, and a drive to make things that actually work. After college, she hopes to find a job combining her mechanical and hardware interests to create biomedical devices. 
 
----
-title: "Erin Wang"
-image: images/disneypfp.jpg
-about: 
-    template: jolla
----
+# Erin Wang HMC '26
+
+![](images/disneypfp.jpg)
 
 **Erin Wang** is a senior engineering major at [Harvey Mudd College](https://hmc.edu). Her love for theme parks like Disney and Universal Studios greatly sparked her interest in robotics and mechatronics specifically for building animatronics. One of her personal projects is to build the robot from the REPO game with 3D printed material and off-the-shelf servo motors. She was extremely excited to be able to bring her passion for animatronics alive through this project. The link to her Github can be found [here](https://github.com/erinlywang).
 
