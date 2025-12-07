@@ -16,6 +16,8 @@ We tested it by connecting to a multimeter to see the max voltage that could be 
 
 One of the main difficulties with this sensor was integrating it mechanically as it had to be detectable through the 3D printed PLA that we used for Toothless. So there were many moments where we thought there was something going wrong on the electrical and software side when it was was the mechanical.
 
+One thing that we did right before demo day was that the Capacitive Touch Sensor would randomly trigger when the dragon box was even touched. This is wherewe found that the make to femal connector that we placed into the GPIO pin would easily wiggle around causing the signal to flicker. So we replace it...**stranded wire for the win.**
+
 ## 2. IR Proximity Sensor Circuit 
 The MCU also deals with detecting hand placement into the mouth using an IR Proximity sensor. The sensor works by placing an [IR LED and IR detector pair](insert link) next to each other such that the IR detector takes the IR light that reflects off an object that comes near the top of the IR light. The closer the object, the stronger the IR intensity of the reflection. 
 
