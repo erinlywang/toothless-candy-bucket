@@ -9,13 +9,37 @@ All MCU Code was done on SEGGER Embedded Studio (IDE) which has a C development 
 ## 1. Capacitive Touch Sensor Code
 The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today. 
 
-The Capacitive Touch Sensor is integrated through GPIO onto the MCU board and that signal is connected electrically to the FPGA from pin PA5 to P47. Thus being able to tell the Servo Motor and LEDs to trigger when the signal goes high.
+The code uses GPIO signals to determine when the capvalue is high by digitally reading the pin it's connected to. When that value goes high, we digitally write to another GPIO pin (PA5) that is connected electrically to an FPGA pin (P47). Thus being able to tell the Servo Motor and LEDs to trigger when the signal goes high and additionally playing the theme song on the DFP player.
+
+This is done within an FSM under state "STATE_WAIT_FOR_CAP" so that after the head opens up we can move to state "STATE_IR_MODE" where we no longer look for signals from the capacitive touch sensor until Toothless is reset for a new user. 
 
 One of the main difficulties with this sensor was integrating it mechanically as it had to be detectable through the 3D printed PLA that we used for Toothless.
 
 ## 2. IR Proximity Sensor Code
+The IR Proximity Sensor produces a voltage when a hand comes near the IR LED which sends a signal to a GPIO pin (PA0) for the Analog-to-Digital Converter to read on the MCU. 
+
+The ADC was intialized in file "STM32L432KC_ADC.c" where the clock and prescaler are set and the ADC is calibrated for recieving signals. The function readADC() then reads off the value through the ADC where it's called on in the handdetection() function.
+
+In the handdetection() function the ADC signal from the IR Proximity sensor is compared against a value we set called HIGH_THRESHOLD. If the value we receive is above that threshold we determine a hand is being detected and return a digital high, otherwise it stays low. The HIGH_THRESHOLD value was determined through trial and error from testing how close the hand had to be to trigger as well as the candy we filled the bowl with. It needed to not activate from the bottom of Toothless' head when he came down to bite each user otherwise the IR would constantly be detecting in an endless loop. 
+
+Once the Capacitive Touch Sensor was triggered we moved to a new FSM state called "STATE_IR_MODE" where we are checking if the irvalue (from handdetection() function) is high, in which case it's written to an FPGA pin to trigger the servo motor and LEDs and the ROAR sound is played on the DFP player.
 
 ## 3. DFPlayer Mini Code
+The DFPlayer was encoded entirely on the MCU interfacting with the Capacitive Touch Sensor and IR Proximity Sensor to know when to play the Theme song and ROAR, respectively.  
+
+The DFPlayer used UART (Universal Asynchronous Receiver/Transmitter) for serial communication in order to play mp3 files from the TF card connected on it's hardware. The code used a standard baud rate of 9600 as specified on the datasheet for the USART1 register and a rate of 115200 for debugging on the USART2 register. 
+
+Two USART addresses are established in tow pointer variables dfp_usart and dbg_usart. Based on the datasheet the DFPlayer recieves a 10-byte frame which is split up in the function DFP_SendCommand() where we're able to change the bits for the command, feedback, parameter high byte, parameter low byte, checksum high, and checksum low.
+
+Since we didn't want any feedback we set that byte to 00 for no reply. The parameters where split to keep the full 16 bits between the high and low bytes. 
+
+Other functions such as DFP_Play(), DFP_Pause(), and more would call on DFP_SendCommand() to complete different functions. On the datasheet it identified different addresses associated with different commands such as 0x06 to specify volume, OxOE to pause the song, OxOF to play a specific file on the TF and many more. 
+
+For more details on specific commands, this is the datasheet we referenced:
+
+[DFPlayer Mini Datasheet with UART Instructions](https://picaxe.com/docs/spe033.pdf)
+
+Then in the while 
 
 
 # FPGA Code
@@ -24,7 +48,7 @@ All FPGA Code (and testbenches) was done on Lattice Raidant which uses Hremardwa
 # Overall Block Diagram
 The complete block diagram can be found below:
 
-![Complete Block Diagram for FPGA](images/CompleteBlockDiagram.jpg)
+![Complete Block Diagram for FPGA. Note all wires with the sane name are connected (e.g. int_osc and reset are shared across all modules)](images/CompleteBlockDiagram.jpg)
 
 ## 1. Servo Motor Code
 
