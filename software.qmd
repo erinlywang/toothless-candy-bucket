@@ -48,9 +48,9 @@ Similarly when the IR Proximity Sensor is high then after the FPGA signal is sen
 All FPGA Code (and testbenches) was done on Lattice Raidant which uses Hremardware Description Languages, in this case System Verilog. The software is able to synthesize and then use the Radiant Programmer tool to program the FPGA itself.
 
 # Overall Block Diagram
-The complete block diagram can be found below:
+The complete block diagram can be found below (@fig-block):
 
-![Complete Block Diagram for FPGA. Note all wires with the sane name are connected (e.g. int_osc and reset are shared across all modules)](images/CompleteBlockDiagram.jpg)
+![Complete Block Diagram for FPGA. Note all wires with the sane name are connected (e.g. int_osc and reset are shared across all modules)](images/CompleteBlockDiagram.jpg){#fig-block}
 
 ## 1. Servo Motor Code
 The Servo Motor was coded mainly through modules `angle_decoder` and `pwm_gen` to decide based on the input which angle to open the jaw to. Both modules work in conjunction to open the jaw to the right angle and hold the angle when needed. First, the inputs from the `estop` and from the MCU, including the capacitive sensor (`captouch`) and the IR detector (`irblock`), are sent through the `synchronizer` to synchronize the inputs. The synchronized inputs are then sent to the `angledecoder` module which implements an FSM to move from a `CLOSED` to an `OPEN` state and then to a `SLIGHT` state (and back and forth between the three) based on whether the capacitive sensor has been activated or the IR sensor has been activated.  servo motor takes in those signals The FSM configuration allowed the angle to be set such that the head would stay fully open until the IR proximity sensor detected a hand and then for the jaw to close just enough to make it feel like the users' hand is being bitten before returning to the `OPEN` state. The state only goes back to `CLOSED` if the estop is triggered for resetting the device for the next user. 
