@@ -1,0 +1,19 @@
+---
+title: "Future Iterations and Work"
+---
+
+# Mechanical Hinge
+
+One of the most pressing issues that happened during Demo Day was that a user accidentally pressed down the head too hard while activating the capacitive sensor, causing the servo to push hard against the stiff restraint and attached head resulting in the servo holder to snap off and the hinge holding the dragon head and body to break.
+
+If we were to reprint, we would use a higher infill density to strengthen the part, but also screw the connection of the head and the body then placing two screw on either side of the holding screw to be able to move the hinges of the head. We think this would be much more secure in keeping the connection together. We would also make sure to either glue the servo down to the top jaw or screw the attachment such that it can't snap. 
+
+# Debugging ease
+
+We also found that the head was hard to debug as we had hot glued the roof of the mout to the head piece. We would definitely use screws instead to connect the jaw pieces to their respective dragon body parts that way assembly and disassembly are easier. 
+
+The wiring was also somewhat of a nightmare to work with. It is likely we would want to start out with much larger wires when putting things together that way we could wire the dragon into the breadboard with the box fully lifted.
+
+# Bigger model
+
+Due to limitations on printing size and printing issues with the Makerspace 3D printers, we weren't able to print Toothless any bigger, but we would love to have a bigger model to hold more candy and also have more space for the servo motor in the head. 
