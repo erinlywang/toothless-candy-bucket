@@ -1,0 +1,44 @@
+---
+title: "Mechanical CAD and Designs"
+---
+
+All CAD files were printed on a Bambu Lab Design 3D printer. This greatly reduced the cost of the mechanical portion. The project will be significantly more expensive without access to a 3D printer and different colored filament. The 3D print can be painted but due to its smooth surface, the print will require sanding to hold paint. 
+
+# Dragon Body
+We sourced the Toothless CAD from a Toothless popcorn bucket online that provided the STL files. Because these files were sourced from the internet, the files did require scaling to fit the 3D printer. We had technical difficulties with the STL file as it downloaded extremely large so we scaled down to about 10% of the original size. However, if recreating this project, scale to your desired size. 
+
+## Dragon Head
+![]()
+
+## Dragon Body
+![]()
+
+In order to let the wires pass into the dragon stand box underneath,
+
+# Jaw Mechanism
+
+In order to open the jaw, we planned for the servo to be held in the head and a lever arm to push against the bottom jaw such that the head opens and closes.
+
+## Bottom Jaw (IR Sensor Holder)
+![CAD for the bottom jaw. The extrusion below the rectangular opening screws into the lever arm that is manipulated by the servo motor. The raised extrusion with two holes houses the IR LED and the IR-PD for the hand detection sensor. The slant on the outside rim slides into the dragon body](images/mouthbottom.png)
+
+## Top Jaw (Servo Holder)
+![CAD for the top jaw. The rectangular extrusion holds the servo motor with M2 screws. The rectangular extrusion is curved on the end to fit the curved inside of the head.](images/mouthroof.png)
+
+## Lever Arm
+![CAD for the lever arm that screws into the servo motor and into the bottom jaw. Due to the bottom jaw being screwed on to the heavier dragon body, when the servo pushes the lever arm down, the top jaw opens up.](images/servoarm.png)
+
+# Dragon Stand
+
+::: {#fig-elephants layout-ncol=2}
+
+![Dragon Stand Left](images/dragonstandleft.png)
+
+![Dragon Stand Right](images/dragonstand.png)
+
+CAD for the dragon stand. The three holes in the corner are to hold buttons for the electrical stop and a volume increase and decrease button. The hole in the middle allows for wires to be passed from the head into the body and into the box. The square on the left side holds the speaker whereas the rectangular hole on the right side allows for wires to be passed outside to an external power supply.
+
+:::
+
+add something about velcro being added
+
