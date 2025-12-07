@@ -1,5 +1,5 @@
 ---
-title: "Toothless Candy Bucket Project"
+title: "Electrical Schematics and Design"
 ---
 
 # Overall Schematic 
