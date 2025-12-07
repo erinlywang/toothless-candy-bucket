@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>electrical – toothless-candy-bucket</title>
+<title>Electrical Schematics and Design – toothless-candy-bucket</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-7e9717d9caa9b4d114d189eaeb260ada.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9ea75ce5dbe4b9425cb3c317040c636e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3d7c62b55d66881102b8ac37c39c15c8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9ea75ce5dbe4b9425cb3c317040c636e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -97,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.qmd"> 
+    <a class="nav-link" href="./materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
@@ -109,8 +142,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Mechanical Design</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./software.html"> 
+<span class="menu-text">Software Design</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./testbenches.html"> 
 <span class="menu-text">Testbenches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./future.html"> 
+<span class="menu-text">Future Work</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./references.html"> 
@@ -131,17 +172,156 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#overall-schematic" id="toc-overall-schematic" class="nav-link active" data-scroll-target="#overall-schematic">Overall Schematic</a></li>
+  <li><a href="#mcu-circuits" id="toc-mcu-circuits" class="nav-link" data-scroll-target="#mcu-circuits">MCU Circuits</a>
+  <ul class="collapse">
+  <li><a href="#capacitive-touch-sensor-circuit" id="toc-capacitive-touch-sensor-circuit" class="nav-link" data-scroll-target="#capacitive-touch-sensor-circuit">1. Capacitive Touch Sensor Circuit</a></li>
+  <li><a href="#ir-proximity-sensor-circuit" id="toc-ir-proximity-sensor-circuit" class="nav-link" data-scroll-target="#ir-proximity-sensor-circuit">2. IR Proximity Sensor Circuit</a></li>
+  <li><a href="#dfplayer-mini-circuit" id="toc-dfplayer-mini-circuit" class="nav-link" data-scroll-target="#dfplayer-mini-circuit">3. DFPlayer Mini Circuit</a></li>
+  </ul></li>
+  <li><a href="#fpga-circuits" id="toc-fpga-circuits" class="nav-link" data-scroll-target="#fpga-circuits">FPGA Circuits</a>
+  <ul class="collapse">
+  <li><a href="#servo-motor-circuit" id="toc-servo-motor-circuit" class="nav-link" data-scroll-target="#servo-motor-circuit">1. Servo Motor Circuit</a></li>
+  <li><a href="#led-array-circuit" id="toc-led-array-circuit" class="nav-link" data-scroll-target="#led-array-circuit">2. LED Array Circuit</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Electrical Schematics and Design</h1>
+</div>
 
 
 
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="overall-schematic" class="level1">
+<h1>Overall Schematic</h1>
+</section>
+<section id="mcu-circuits" class="level1">
+<h1>MCU Circuits</h1>
+<section id="capacitive-touch-sensor-circuit" class="level2">
+<h2 class="anchored" data-anchor-id="capacitive-touch-sensor-circuit">1. Capacitive Touch Sensor Circuit</h2>
+<p>The MCU uses a Capacitive Touch Sensor to detect a user’s hand to trigger the start of the whole sequence (<a href="#fig-capscheme" class="quarto-xref">Figure&nbsp;1</a>). The GPIO receives that signal on PA8 which simultaneously triggeres PA5 which is electrically connected to P47 to send a signal to the FPGA components as well.</p>
+<p>The Capactive Touch Sensor receives 5V and ground from the circuit. It works by applying a small voltage to create a constant electrostatic field on one surface. When that conductive material is touched by a human, a capacitor is formed from the virtual ground that the user provides. This is seen in practically every smart device around us today.</p>
+<p>We tested it by connecting to a multimeter to see the max voltage that could be received on the GPIO pin when detecting a finger touch.</p>
+<div id="fig-capscheme" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-capscheme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/capschematic.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-capscheme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: Electrical schematic for the Capacitive Touch sensor. The exact module is a TTP223 Touch Sensor Module and can be found on DigiKey and Amazon. The pins for the input signal into the STM are labeled. The 5V and GND are sourced from the STM. The 5V and GND connection and all other connections into the STM are not pictured in this image.
+</figcaption>
+</figure>
+</div>
+<p>One of the main difficulties with this sensor was integrating it mechanically as it had to be detectable through the 3D printed PLA that we used for Toothless. So there were many moments where we thought there was something going wrong on the electrical and software side when it was was the mechanical.</p>
+<p>One thing that we did right before demo day was that the Capacitive Touch Sensor would randomly trigger when the dragon box was even touched. This is wherewe found that the make to femal connector that we placed into the GPIO pin would easily wiggle around causing the signal to flicker. So we replace it…<strong>stranded wire for the win.</strong></p>
+</section>
+<section id="ir-proximity-sensor-circuit" class="level2">
+<h2 class="anchored" data-anchor-id="ir-proximity-sensor-circuit">2. IR Proximity Sensor Circuit</h2>
+<p>The MCU also deals with detecting hand placement into the mouth using an IR Proximity sensor. The sensor works by placing an <a href="https://www.amazon.com/HiLetgo-Infrared-Emitter-Receiver-Emission/dp/B00M1PN5TK/ref=sr_1_4?adgrpid=192063634931&amp;dib=eyJ2IjoiMSJ9.G5ONKyLml7tIrA89PnyO7xUnNGCq_2VeBRjKcP1xR7-TgMCgC3KkU7F-kO9JMqLH8Y1v6CgU2QJxKoGgisWZwJ7PT6VJ-Pq5O2d9tXNjbBgTeVlOhtDerfCCVCR0df9LYxiKKgwySu31rWncaJx_aH31xNyPzy981-pd37GPXY1yhIvcpPNYhENwWqtsYmLdBI1AcMl2YbHxSve1dxoGmDeSlrsqHBHMOUAd05ACpYk.0espJPAfCRKtrEJg6DHfVpbS1zETPZt5KKQ7u0BdEWA&amp;dib_tag=se&amp;hvadid=779584963579&amp;hvdev=c&amp;hvexpln=0&amp;hvlocphy=9031250&amp;hvnetw=g&amp;hvocijid=18351616154603638409--&amp;hvqmt=b&amp;hvrand=18351616154603638409&amp;hvtargid=kwd-2450032230675&amp;hydadcr=8490_13831457_74599&amp;keywords=ir+transmitter+and+receiver+leds&amp;mcid=829ba2d3ca76336396dbd94d97acb794&amp;qid=1765091069&amp;sr=8-4">IR LED and IR detector pair</a> next to each other such that the IR detector takes the IR light that reflects off an object that comes near the top of the IR light (<a href="#fig-irreflect" class="quarto-xref">Figure&nbsp;2</a>). The closer the object, the stronger the IR intensity of the reflection.</p>
+<div id="fig-irreflect" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-irreflect-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/irreflect.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-irreflect-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;2: Sketch demonstrating the IR LED reflecting off an object hovering over the LED into the IR detector. The closer the hand, the strong the IR intensity of the reflection and the more current is produced by the IR-PD.
+</figcaption>
+</figure>
+</div>
+<p>The circuit is heavily inspired by <a href="https://www.instructables.com/How-to-Make-a-Proximity-Sensor/">AutoDesk Instructuable’s Proximity Sensor</a>, but without a potentiometer for changing the distance of the object away from the sensor that the circuit can detect. The circuit schematic is shown below (<a href="#fig-ircircuit" class="quarto-xref">Figure&nbsp;3</a>). Note that the <strong>IR LED is in the opposite direction as the IR Photodetector (IR-PD)</strong>.</p>
+<div id="fig-ircircuit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ircircuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ircircuit.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ircircuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3: Electrical schematic for the IR proximity sensor.The InfraRed light reflected into the IR photo-detector produces a current that increases the voltage over the resistor in series with the IR-PD that is then compared by the LM385 op-amp. The op-amp configuration provides a non-inverting gain of approximately 45. The pins for the LM385 op-amp and the input signal into the STM are labeled. The 5V and GND are sourced from the STM. The 5V and GND connection and all other connections into the STM are not pictured in this image.
+</figcaption>
+</figure>
+</div>
+<p>The more InfraRed light that falls on the IR-PD, the more current that flows through the PD. This current then flows through the 10kΩ resistor connecting the cathode of the PD to ground which increases the voltage potential across the resistor that is seen by the positive terminal of the LM358 op-amp (Pin 2). The op-amp is configured with a non-inverting gain based on the resistorconnected between vout and the negative terminal (R<sub>1</sub>) and the resistor connected between the negative terminal of the op-amp to ground (R<sub>2</sub>). The gain of the non-inverting op-amp (A) follows the equation below.</p>
+<p><span class="math display">\[
+A_{non-inverting} = 1 + \frac{R_{1}}{R_{2}} = 1 + \frac{21kΩ}{470Ω} = 44.7
+\]</span></p>
+<p>In <a href="#fig-ircircuit" class="quarto-xref">Figure&nbsp;3</a>, because we used R<sub>1</sub> = 21kΩ and R<sub>2</sub>=470Ω, the gain of our circuit was around 45. This allowed for a hand near the sensor to be detected but the roof of the mouth to not be detected when the jaw was open. For debugging the circuit, we recommend to place an LED in series with a resistor to ground at the voltage output of the op-amp. The LED brightness should increase as the object gets closer to the LED pair.</p>
+</section>
+<section id="dfplayer-mini-circuit" class="level2">
+<h2 class="anchored" data-anchor-id="dfplayer-mini-circuit">3. DFPlayer Mini Circuit</h2>
+<p>One of the big issues for the DFPlayer was that the RX and TX channels were swapped for the longest time. Although a seemingly simple mistake, it was one that tripped us up for a while because there wasn’t a proper datasheet to reference of each of the DFPlayers pin outs. Additionally the DFPlayer works on its own independently so if all your files are named and numbered correctly (which was also a big issue at first) you can use the ADKEY and IO ports to trigger play different segments on the TF card. It was unclear for a while whether it was recieving an electrical signal or what we were producing via the software’s UART signals.</p>
+<p>The circuit itself is largely inspired by sample circuits on the <a href="https://picaxe.com/docs/spe033.pdf">Picaxe Datasheet</a> that we later found as well as a <a href="https://www.youtube.com/watch?v=7WiSeQxb1bU">MP3-TF-16p Tutorial on Youtube</a>. The schematic for the DFPlayer mini is shown below (<a href="#fig-dfpscheme" class="quarto-xref">Figure&nbsp;4</a>)</p>
+<p>Since the DFPlayer was completely controlled via the MCU no signal was sent to the FPGA.</p>
+<div id="fig-dfpscheme" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-dfpscheme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/dfpschematic.jpeg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-dfpscheme-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;4: Electrical schematic for the DFP Mini Player. The DFPlayer had pins that directly correleated to RX and TX for UART serial input/output. The capacitor was to reduce noise like what we had similarly seen on Lab 4. The pins for the input signal into the STM are labeled. The 5V and GND are sourced from the STM. All other connections into the STM are not pictured in this image.
+</figcaption>
+</figure>
+</div>
+<p>One big thing we learned was <strong>to use stranded wire for as many things as we can</strong> because the speaker and various connections often broke off without notice during the debugging process.</p>
+</section>
+</section>
+<section id="fpga-circuits" class="level1">
+<h1>FPGA Circuits</h1>
+<section id="servo-motor-circuit" class="level2">
+<h2 class="anchored" data-anchor-id="servo-motor-circuit">1. Servo Motor Circuit</h2>
+<p>One issue we ran into was the power the servo motor drained when moving which caused the music on the DFPlayer mini to cut out when the servo was in action and meant that we couldn’t play music at the same time that the jaw opened. To circumvent this, we powered the servo motor with a 5V power supply separate from the 5V provided by the MCU. It is important to <strong>connect the ground of the servo and the ground of the power supply to the same ground as the MCU and FPGA such that they all share common ground</strong>. The issue of common ground ended up being a nasty and almost invisible problem that was hard to debug later when the circuit board and breadboard were hidden underneath our box stand.</p>
+<p>Another way we ensured the servo inject noise into the MCU was using a non-inverting NPN open-collector buffer. This also allowed us to provde the servo with the necessary clean high and low signal for the PWM. The FPGA pins only supply 3.3V which has potential to muddle the PWM signal where the FPGA would see 3.3V as low rather than as high, thus using the two NPN transistor configuration created a non-inverting buffer that pulled the 3.3V signal to a 5V signal. The schematic for the non-inverting, two NPN buffer and servo motor is below (<a href="#fig-servocircuit" class="quarto-xref">Figure&nbsp;5</a>).</p>
+<div id="fig-servocircuit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-servocircuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/servocircuit.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-servocircuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5: Electrical schematic for the servo motor. The servo is powered with a separate 5V power supply. The pwm signal from the FPGA goes through an NPN transistor circuit tied to 3.3V that inverts the PWM signal. Then the inverted signal goes through another NPN circuit tied to 5V that inverts the signal back to the original PWM signal and pulls the 3.3V up to 5V for the servo to cleanly read high. The 1kΩ resistor between the FPGA and the base of the transistor limits base current and protects the FPGA pin while the 4.7kΩ resistor acts as a pull-up resistor for the collector. All other connections into the FPGA including 3.3V and GND are not pictured.
+</figcaption>
+</figure>
+</div>
+<p>The 1kΩ resistor from the FPGA pin (P12) to the base of the NPN transistor protects the FPGA pin by limiting base current while the 4.7kΩ resistor acts as a pull-up resistor for the collector. We used 2N9304 transistors which has the emitter on Pin 1, the base on Pin 2, and the collector on Pin 3 (<a href="#fig-servocircuit" class="quarto-xref">Figure&nbsp;5</a>). If using a different NPN transistor, be sure to check the transistor’s pinout.</p>
+</section>
+<section id="led-array-circuit" class="level2">
+<h2 class="anchored" data-anchor-id="led-array-circuit">2. LED Array Circuit</h2>
+<p>The LED array circuit (<a href="#fig-ledcircuit" class="quarto-xref">Figure&nbsp;6</a>) is simply 10 LEDs wired with a 1kΩ resistor in series to ground. The LED strip uses another 2N3904 NPN transistor that uses a signal from the FPGA to decided whether or not to turn the light strip on. We had to use a separate power supply that provided 12V as the 5V from the MCU and the 3.3V from the FPGA were too low to power the LED strip.</p>
+<div id="fig-ledcircuit" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-ledcircuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="images/ledcircuit.jpg" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-ledcircuit-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;6: Electrical circuit for the LED array circuit. Each individual LED is connected to a 1kΩ resistor tied to ground. The first 5 LEDs are green while the other 5 are white. The LED strip is powered by a separate 12V power supply and the anode is connected to the collector of a 2N3904 transistor. The 10kΩ resistor between the FPGA and the base of the transistor limits base current and protects the FPGA pin. The emitter of the transistor is tied to ground. All other connections into the FPGA including GND are not pictured.
+</figcaption>
+</figure>
+</div>
+<p>It is important to note that unlike the servo motor, the LED light strip is placed in series with the voltage source such that the cathode of the light strip is attached to the positive terminal of the power supply and the anode is connected to the collector (Pin 3) of the transistor. The resistor between the FPGA pin (P13) is greater than that for the servo as the voltage being supplied from the power supply is also much greater. When programming the LEDs, the order can be chosen based on which pins you send a high signal to first. For our purposes, we lighted in a certain order but placed the LEDs not in order to create a slightly random light show. See the software design section for more details.</p>
 
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -216,7 +396,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/erinlywang\.github\.io\/toothless-candy-bucket\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -230,6 +410,8 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {

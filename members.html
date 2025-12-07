@@ -37,10 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-7e9717d9caa9b4d114d189eaeb260ada.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9ea75ce5dbe4b9425cb3c317040c636e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-3d7c62b55d66881102b8ac37c39c15c8.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-9ea75ce5dbe4b9425cb3c317040c636e.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -97,7 +130,7 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.qmd"> 
+    <a class="nav-link" href="./materials.html"> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
@@ -109,8 +142,16 @@ ul.task-list li input[type="checkbox"] {
 <span class="menu-text">Mechanical Design</span></a>
   </li>  
   <li class="nav-item">
+    <a class="nav-link" href="./software.html"> 
+<span class="menu-text">Software Design</span></a>
+  </li>  
+  <li class="nav-item">
     <a class="nav-link" href="./testbenches.html"> 
 <span class="menu-text">Testbenches</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./future.html"> 
+<span class="menu-text">Future Work</span></a>
   </li>  
   <li class="nav-item">
     <a class="nav-link" href="./references.html"> 
@@ -131,8 +172,16 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#the-team" id="toc-the-team" class="nav-link active" data-scroll-target="#the-team">The Team</a></li>
+  <li><a href="#caiya-coggshall-hmc-26" id="toc-caiya-coggshall-hmc-26" class="nav-link" data-scroll-target="#caiya-coggshall-hmc-26">Caiya Coggshall HMC ’26</a></li>
+  <li><a href="#erin-wang-hmc-26" id="toc-erin-wang-hmc-26" class="nav-link" data-scroll-target="#erin-wang-hmc-26">Erin Wang HMC ’26</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -140,8 +189,25 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="the-team" class="level1">
+<h1>The Team</h1>
+</section>
+<section id="caiya-coggshall-hmc-26" class="level1">
+<h1>Caiya Coggshall HMC ’26</h1>
+<p><img src="images/caiyaflower.JPG" class="img-fluid"></p>
+<p><strong>Caiya Coggshall</strong> is a senior engineering major at <a href="https://hmc.edu">Harvey Mudd College</a> with a concentration in Mechanical, Manufacturing, and Computer systems.</p>
+<p>​Some of her past experience involves fabricating and testing fixtures to support the development of a Class III medical device as a manufacturing engineering intern at E2. She’s prototyped a fully mechanical autoinjector for hormonal acne treatment through Indomo. In research, she managed a cell culture facility and contributed to experimental systems for cancer and nanoparticle drug delivery. On campus, she serves as a machine shop proctor, training students in milling, lathe operation, and various other tooling machines. Lastly, she leads as the external operations coordinator of the tours program at Harvey Mudd College. The link to her personal portfolio can be found <a href="https://caiyacoggshall1.wixsite.com/caiya-coggshall/portfolio">here</a></p>
+<p>She’s drawn to projects that build real, physical systems and approach every problem with curiosity, attention to detail, and a drive to make things that actually work. After college, she hopes to find a job combining her mechanical and hardware interests to create biomedical devices.</p>
+</section>
+<section id="erin-wang-hmc-26" class="level1">
+<h1>Erin Wang HMC ’26</h1>
+<p><img src="images/disneypfp.jpg" class="img-fluid"></p>
+<p><strong>Erin Wang</strong> is a senior engineering major at <a href="https://hmc.edu">Harvey Mudd College</a>. Her love for theme parks like Disney and Universal Studios greatly sparked her interest in robotics and mechatronics specifically for building animatronics. One of her personal projects is to build the robot from the REPO game with 3D printed material and off-the-shelf servo motors. She was extremely excited to be able to bring her passion for animatronics alive through this project. The link to her Github can be found <a href="https://github.com/erinlywang">here</a>.</p>
+<p>After college, she aims to apply for Masters programs robotics, electrical engineering, or mechanical engineering. When she is not working hard in her classes, music and food fill her life. She loves to dance and sing as well as compose music, and she is always willing to try a new food place.</p>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -216,7 +282,7 @@ ul.task-list li input[type="checkbox"] {
     }
       var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
       var mailtoRegex = new RegExp(/^mailto:/);
-        var filterRegex = new RegExp('/' + window.location.host + '/');
+        var filterRegex = new RegExp("https:\/\/erinlywang\.github\.io\/toothless-candy-bucket\/");
       var isInternal = (href) => {
           return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
       }
@@ -230,6 +296,8 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
