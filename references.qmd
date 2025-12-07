@@ -1,5 +1,16 @@
 # Reference Links
 
+## Helpful tutorials/inspo
+* [Servo Motor PWM tutorial](https://blog.wokwi.com/learn-servo-motor-using-wokwi-logic-analyzer/)
+* [IR Proximity Sensor inspo](https://www.instructables.com/How-to-Make-a-Proximity-Sensor/)
+* [DFPlayer Mini tutorial](https://www.youtube.com/watch?v=7WiSeQxb1bU)
+
+## Datasheets 
+* [DFPlayer Datasheet](https://picaxe.com/docs/spe033.pdf)
+
+## STL Files
+* [Toothless Popcorn Bucket STL](https://www.google.com/url?q=https://thangs.com/designer/serev3d/3d-model/Toothless%2520Popcorn%2520Bucket%2520-%2520Cute%2520Functional%2520Container%2520-%2520No%2520Supports%25203D%2520Print%2520STL%252F3MF%2520-%2520Multicolor-1179986?srsltid%3DAfmBOorELNO1pAViiqwn7SVjYEa0bkFhM3gSQqvCqB2wc0x1aRdmUiSE&sa=D&source=docs&ust=1765095611653341&usg=AOvVaw1BDeelP-9spyfWYTSy1TtJ)
+
 
 
 # Acknowledgements

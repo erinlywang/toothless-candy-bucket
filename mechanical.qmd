@@ -5,7 +5,7 @@ title: "Mechanical CAD and Designs"
 All CAD files were printed on a Bambu Lab Design 3D printer. This greatly reduced the cost of the mechanical portion. The project will be significantly more expensive without access to a 3D printer and different colored filament. The 3D print can be painted but due to its smooth surface, the print will require sanding to hold paint. 
 
 # Dragon Body
-We sourced the Toothless CAD from a Toothless popcorn bucket online that provided the STL files (@fig-dragonstl). Because these files were sourced from the internet, the files did require scaling to fit the 3D printer. We had technical difficulties with the STL file as it downloaded extremely large so we scaled down to about 10% of the original size. However, if recreating this project, scale to your desired size. 
+We sourced the Toothless CAD from a [Toothless popcorn bucket](https://www.google.com/url?q=https://thangs.com/designer/serev3d/3d-model/Toothless%2520Popcorn%2520Bucket%2520-%2520Cute%2520Functional%2520Container%2520-%2520No%2520Supports%25203D%2520Print%2520STL%252F3MF%2520-%2520Multicolor-1179986?srsltid%3DAfmBOorELNO1pAViiqwn7SVjYEa0bkFhM3gSQqvCqB2wc0x1aRdmUiSE&sa=D&source=docs&ust=1765095611653341&usg=AOvVaw1BDeelP-9spyfWYTSy1TtJ) online that provided the STL files (@fig-dragonstl). Because these files were sourced from the internet, the files did require scaling to fit the 3D printer. We had technical difficulties with the STL file as it downloaded extremely large so we scaled down to about 10% of the original size. However, if recreating this project, scale to your desired size. 
 
 ![Full Model of Dragon Head and Body on Bambu Print Plate](images/dragonstl.png){#fig-dragonstl}
 
