@@ -7,7 +7,7 @@ about:
     template: jolla
 ---
 
-**Caiya Coggshall** is a senior at Harvey Mudd College pursuing a Bachelor of Science in Engineering with a concentration in Mechanical, Manufacturing, and Computer systems. Her academic background spans design and manufacturing engineering, continuum mechanics, systems engineering, microprocessor systems, and electrical & magnetic circuits providing a strong foundation in both analytical and hands-on problem solving.
+**Caiya Coggshall** is a senior engineering major at [Harvey Mudd College](https://hmc.edu) with a concentration in Mechanical, Manufacturing, and Computer systems.
 
 ​Some of her past experience involves fabricating and testing fixtures to support the development of a Class III medical device as a manufacturing engineering intern at E2. She’s prototyped a fully mechanical autoinjector for hormonal acne treatment through Indomo. In research, she managed a cell culture facility and contributed to experimental systems for cancer and nanoparticle drug delivery. On campus, she serves as a machine shop proctor, training students in milling, lathe operation, and various other tooling machines. Lastly, she leads as the external operations coordinator of the tours program at Harvey Mudd College. The link to her personal portfolio can be found [here](https://caiyacoggshall1.wixsite.com/caiya-coggshall/portfolio)
 
