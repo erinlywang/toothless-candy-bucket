@@ -10,6 +10,8 @@ about:
 
 ---
 
+![The Inventors <3](images/caiyaanderin.png)
+
 # Project Introduction
 Caiya and Erin designed an interactive candy bucket inspired by the lovable dragon, Toothless, from the film *How to Train Your Dragon*. Taken from the iconic scene where Toothless places his snout on Hiccup's outstretched palm, the candy bucket opens its mouth when the nose is touched and plays a clip from the awe-inspiring theme song, "Test Drive".
 

@@ -1,8 +1,14 @@
 The Bill of Materials. (BOM) for making the full project can be found below:
 
+## BOM
 
-+-------------------------------------------------------+--------------+--------+------------+-------+
-|  Item                                                 | Part/ASIN #  | Amount | Unit Price | Total |
-+=======================================================+==============+========+============+=======+
-| [Mini MP3 Player Audio Voice Module for DFPlayer](https://shorturl.at/vU0Q5) |B01D1D0E7Q|1|$8.99|$8.99|
-+-------------------------------------------------------+--------------+--------+------------+-------+
+| Item | Part/ASIN Number | Amount | Unit Price | Total |
+|---------|-----|------|------|------|
+| [HiLetgo 2pcs mp3 Player Mini MP3 Player Audio Voice Module TF Card U Disk Board for DFPlayer Audio Voice Music Module](https://www.amazon.com/dp/B01D1D0E7Q/ref=sspa_dk_detail_4?psc=1&pd_rd_i=B01D1D0E7Q&pd_rd_w=h64Vu&content-id=amzn1.sym.f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_p=f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_r=9NPYVZ3AGHXGNMHWHGBV&pd_rd_wg=WeWOb&pd_rd_r=d6941b03-ba37-4696-a3cc-1582e0f07604&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM) | B01D1D0E7Q | 1 | $8.99 | $8.99 |
+| [2 Pack TF Card 8GB with Adapter, High Speed Memory Card, UHS-I C10 A1 Memory TF Card for Tablet/Mobile Phone/Camera/Car Audio/Game Console (TF162 Red Gold 8GB)](https://www.amazon.com/dp/B0CYT2KL98/ref=sspa_dk_detail_0?pd_rd_i=B0CYSMZ8Z6&pd_rd_w=x38zj&content-id=amzn1.sym.f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_p=f2f1cf8f-cab4-44dc-82ba-0ca811fb90cc&pf_rd_r=PY5FD88MPCZWGAW0C38S&pd_rd_wg=RhNgq&pd_rd_r=5854448c-8243-423e-afcd-09136dbd4eca&sp_csd=d2lkZ2V0TmFtZT1zcF9kZXRhaWxfdGhlbWF0aWM&th=1) | B0CYT2KL98 | 1 | $7.99 | $7.99 |
+| [SOCAL-LED LIGHTING 30cm 12" Purple Flexible LED Strips High Power Bright 5050 12 SMD Car DRL Under Dash Accent Light, Waterproof, Cuttable, Pack of 2](https://www.amazon.com/SOCAL-LED-Purple-Flexible-Waterproof-Cuttable/dp/B00RT2WCNK/ref=sr_1_4?crid=3UO9EXKEO6RDK&dib=eyJ2IjoiMSJ9.GKoAWUqMkAy3Q6MIswdRCVr0scVqDAQ7molCWCE0xhdGmrkwzfZj82hCN0V7EL-fl8Zd5mc3ejs7_o5fE2w6OfrYMXlJZQcad85C8PQRZsoZknUJgmSZcg2ObWjLuLux1ChudCiT8_p7cwwVBeTE5gWdWfy9k1napYx05MFWIrXuGkcbvWVAgUr39i4iGJ-548nyJM7FVUxgjZR_PANrJQz_hfcTlM_F3-ZNtq0hvRHWAuKyWTuery1aewE3hxOZ_iqmfrkIhCOAFXsph57O03T0TlOtu1EnzT23NQPH0H4.f4x2XtTY8n9F9-gJOukaoqLGKEVt1HJ5PXkpvj_5si4&dib_tag=se&keywords=small%2Bpurple%2Bled%2Bstrip%2Bfor%2Bengineers&qid=1760502153&sprefix=small%2Bpurple%2Bled%2Bstrip%2Bfor%2Bengineers%2Caps%2C134&sr=8-4&th=1) | B00RT2WCNK | 1 | $6.99 | $6.99 |
+| [Miuzei MG996R Servo Motor Metal Gear High Speed Torque Digital Servo for RC DIY Helicopter Car Boat Robot (2)](https://www.amazon.com/dp/B0BZ4QMSM2?ref_=ppx_hzsearch_conn_dt_b_fed_asin_title_2&th=1) | B0BZ4QMSM2 | 1 | $14.99 | $14.99 |
+| [WWZMDiB 6Pcs TTP223B Digital Capacitive Touch Sensor Switch Module DC 2~5.5V for Arduino Raspberry Pi DIY](https://www.amazon.com/WWZMDiB-TTP223B-Digital-Capacitive-Raspberry/dp/B0BG2694RX/ref=sr_1_6?crid=38NHCSCJG5W73&dib=eyJ2IjoiMSJ9.koLe4jhxMZTL7XAD9v8Zaw6HFbrNxWRZZjM5gUhoUY2WGzXXcNvLWUHrby_7EcsRc9gCwcTXWZGLwj7ai-XX-pkkfTCLeoq9qQTUPe5zqYfwOguG-p31dDUKC_BmAhZOXkc_TAThR7CxRbWaZaJber-eg91ujk4Z9lYeIXcX16YgH9oXqOkQ_6Umnv8jhmifSdkxuMb32_sY50-WQB90MnOUxOsriUYLTEToE6ISZv0.EtSuhWpd4k4foXukHTs-4OY0Uf4-JNA93B-RcyQq8Ys&dib_tag=se&keywords=big+touch+sensor&qid=1760504329&sprefix=big+touch+sensor%2Caps%2C173&sr=8-6) | B0BG2694RX | 1 | $6.99 | $6.99 |
+| 80 Ohm 4 Watt Speaker	| Sourced from Stockroom | 1 | N/A | N/A |
+| Capacitors/Resistors/Jumper Cables | Sourced from Stockroom | TBD | N/A | N/A |
+| Total Cost: $45.95 | 
