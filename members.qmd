@@ -15,12 +15,12 @@ She’s drawn to projects that build real, physical systems and approach every p
 
 ---
 title: "Erin Wang"
-image: images/headshot.png
+image: images/disneypfp.jpg
 about: 
     template: jolla
 ---
 
-**Erin Wang** is a senior engineering major at [Harvey Mudd College](https://hmc.edu). Her interests are in robotics and mechatronics specifically for building animatronics in theme parks. One of her personal projects is to build the robot from the REPO game with 3D printed material and off-the-shelf servo motors. The link to her Github can be found [here](https://github.com/erinlywang).
+**Erin Wang** is a senior engineering major at [Harvey Mudd College](https://hmc.edu). Her love for theme parks like Disney and Universal Studios greatly sparked her interest in robotics and mechatronics specifically for building animatronics. One of her personal projects is to build the robot from the REPO game with 3D printed material and off-the-shelf servo motors. She was extremely excited to be able to bring her passion for animatronics alive through this project. The link to her Github can be found [here](https://github.com/erinlywang).
 
 After college, she aims to apply for Masters programs robotics, electrical engineering, or mechanical engineering. When she is not working hard in her classes, music and food fill her life. She loves to dance and sing as well as compose music, and she is always willing to try a new food place. 
 
