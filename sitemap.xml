@@ -1,39 +1,39 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://erinlywang.github.io/toothless-candy-bucket/testbenches.html</loc>
-    <lastmod>2025-12-07T07:14:34.512Z</lastmod>
-  </url>
-  <url>
     <loc>https://erinlywang.github.io/toothless-candy-bucket/references.html</loc>
-    <lastmod>2025-12-07T07:27:33.154Z</lastmod>
-  </url>
-  <url>
-    <loc>https://erinlywang.github.io/toothless-candy-bucket/mechanical.html</loc>
-    <lastmod>2025-12-07T07:20:57.821Z</lastmod>
-  </url>
-  <url>
-    <loc>https://erinlywang.github.io/toothless-candy-bucket/index.html</loc>
-    <lastmod>2025-12-07T07:57:10.853Z</lastmod>
-  </url>
-  <url>
-    <loc>https://erinlywang.github.io/toothless-candy-bucket/electrical.html</loc>
-    <lastmod>2025-12-07T07:08:10.684Z</lastmod>
-  </url>
-  <url>
-    <loc>https://erinlywang.github.io/toothless-candy-bucket/future.html</loc>
-    <lastmod>2025-12-07T07:57:10.837Z</lastmod>
+    <lastmod>2025-12-07T07:23:03.725Z</lastmod>
   </url>
   <url>
     <loc>https://erinlywang.github.io/toothless-candy-bucket/materials.html</loc>
-    <lastmod>2025-12-07T07:08:33.092Z</lastmod>
+    <lastmod>2025-12-07T06:59:52.174Z</lastmod>
+  </url>
+  <url>
+    <loc>https://erinlywang.github.io/toothless-candy-bucket/index.html</loc>
+    <lastmod>2025-12-08T01:18:38.212Z</lastmod>
+  </url>
+  <url>
+    <loc>https://erinlywang.github.io/toothless-candy-bucket/testbenches.html</loc>
+    <lastmod>2025-12-07T07:21:25.887Z</lastmod>
+  </url>
+  <url>
+    <loc>https://erinlywang.github.io/toothless-candy-bucket/electrical.html</loc>
+    <lastmod>2025-12-07T07:18:12.095Z</lastmod>
   </url>
   <url>
     <loc>https://erinlywang.github.io/toothless-candy-bucket/members.html</loc>
-    <lastmod>2025-12-07T07:57:10.855Z</lastmod>
+    <lastmod>2025-12-07T07:55:39.760Z</lastmod>
+  </url>
+  <url>
+    <loc>https://erinlywang.github.io/toothless-candy-bucket/mechanical.html</loc>
+    <lastmod>2025-12-07T07:21:25.886Z</lastmod>
+  </url>
+  <url>
+    <loc>https://erinlywang.github.io/toothless-candy-bucket/future.html</loc>
+    <lastmod>2025-12-07T07:30:56.341Z</lastmod>
   </url>
   <url>
     <loc>https://erinlywang.github.io/toothless-candy-bucket/software.html</loc>
-    <lastmod>2025-12-07T07:15:34.030Z</lastmod>
+    <lastmod>2025-12-07T07:21:25.886Z</lastmod>
   </url>
 </urlset>
