@@ -21,7 +21,7 @@ The project takes inspiration from Halloween candy buckets to create a Toothless
 
 The example video from demo day can be found here:
 
-{{< video demo.MOV >}}
+{{< video https://drive.google.com/file/d/1XOTytbOhbEXflz60DdPLg2-iwdU8YQ9W/view?usp=sharing >}}
 
 
 # Open Source Code
