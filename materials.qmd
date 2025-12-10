@@ -12,3 +12,5 @@ The Bill of Materials. (BOM) for making the full project can be found below:
 | 80 Ohm 4 Watt Speaker	| Sourced from Stockroom | 1 | N/A | N/A |
 | Capacitors/Resistors/Jumper Cables | Sourced from Stockroom | TBD | N/A | N/A |
 | Total Cost: $45.95 | 
+
+

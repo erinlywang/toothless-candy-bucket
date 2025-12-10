@@ -2,7 +2,7 @@ project:
   type: website
 
 website:
-  title: "toothless-candy-bucket"
+  title: "Toothless Candy Bucket"
   navbar:
     left:
       - href: index.qmd
@@ -10,19 +10,25 @@ website:
         icon: house-heart-fill
       - href: materials.qmd
         text: Materials
+        icon: cart-check-fill
       - href: electrical.qmd
         text: Electrical Design
+        icon: cpu-fill
       - href: mechanical.qmd
         text: Mechanical Design
+        icon: wrench-adjustable
       - href: software.qmd
         text: Software Design
+        icon: code-slash
       - href: testbenches.qmd
         text: Testbenches
         icon: pen-fill
       - href: future.qmd
         text: Future Work
+        icon: arrow-repeat
       - href: references.qmd
         text: References
+        icon: link-45deg
       - href: members.qmd
         text: People
         icon: people-fill

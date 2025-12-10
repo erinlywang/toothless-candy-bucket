@@ -1,6 +1,6 @@
 # The Team
 
-# Caiya Coggshall HMC '26
+## Caiya Coggshall HMC '26
 
 ![](images/caiyaflower.JPG)
 
@@ -10,7 +10,7 @@
 
 She’s drawn to projects that build real, physical systems and approach every problem with curiosity, attention to detail, and a drive to make things that actually work. After college, she hopes to find a job combining her mechanical and hardware interests to create biomedical devices. 
 
-# Erin Wang HMC '26
+## Erin Wang HMC '26
 
 ![](images/disneypfp.jpg)
 

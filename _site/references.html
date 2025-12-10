@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.8.21">
+<meta name="generator" content="quarto-1.8.24">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>references – toothless-candy-bucket</title>
+<title>references – Toothless Candy Bucket</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -37,10 +37,14 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting-ea1d7ac60288e0f1efdbc993fd8432ae.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dark-b651517ce65839d647a86e2780455cfb.css" rel="stylesheet" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-dc55a5b9e770e841cd82e46aadbfb9b0.css" rel="stylesheet" class="quarto-color-scheme-extra" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap-5b4ad623e5705c0698d39aec6f10cf02.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d5b2d9d2dc11cfc682ee5b7f46b2a6f6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-dark-5d27a20fd9510e8e32fc99a7eebb97b4.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-d5b2d9d2dc11cfc682ee5b7f46b2a6f6.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme-extra" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -69,6 +73,35 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN" && texText && texText.data) {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -83,7 +116,7 @@ ul.task-list li input[type="checkbox"] {
     <a href="./index.html" class="navbar-brand navbar-brand-logo">
     </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">toothless-candy-bucket</span>
+    <span class="navbar-title">Toothless Candy Bucket</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -93,31 +126,48 @@ ul.task-list li input[type="checkbox"] {
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
   <li class="nav-item">
-    <a class="nav-link" href="./index.html"> 
+    <a class="nav-link" href="./index.html"> <i class="bi bi-house-heart-fill" role="img">
+</i> 
 <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./materials.qmd"> 
+    <a class="nav-link" href="./materials.html"> <i class="bi bi-cart-check-fill" role="img">
+</i> 
 <span class="menu-text">Materials</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./electrical.html"> 
+    <a class="nav-link" href="./electrical.html"> <i class="bi bi-cpu-fill" role="img">
+</i> 
 <span class="menu-text">Electrical Design</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./mechanical.html"> 
+    <a class="nav-link" href="./mechanical.html"> <i class="bi bi-wrench-adjustable" role="img">
+</i> 
 <span class="menu-text">Mechanical Design</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./testbenches.html"> 
+    <a class="nav-link" href="./software.html"> <i class="bi bi-code-slash" role="img">
+</i> 
+<span class="menu-text">Software Design</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link" href="./testbenches.html"> <i class="bi bi-pen-fill" role="img">
+</i> 
 <span class="menu-text">Testbenches</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./references.html" aria-current="page"> 
+    <a class="nav-link" href="./future.html"> <i class="bi bi-arrow-repeat" role="img">
+</i> 
+<span class="menu-text">Future Work</span></a>
+  </li>  
+  <li class="nav-item">
+    <a class="nav-link active" href="./references.html" aria-current="page"> <i class="bi bi-link-45deg" role="img">
+</i> 
 <span class="menu-text">References</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./members.html"> 
+    <a class="nav-link" href="./members.html"> <i class="bi bi-people-fill" role="img">
+</i> 
 <span class="menu-text">People</span></a>
   </li>  
 </ul>
@@ -131,8 +181,20 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#reference-links" id="toc-reference-links" class="nav-link active" data-scroll-target="#reference-links">Reference Links</a>
+  <ul class="collapse">
+  <li><a href="#helpful-tutorialsinspo" id="toc-helpful-tutorialsinspo" class="nav-link" data-scroll-target="#helpful-tutorialsinspo">Helpful tutorials/inspo</a></li>
+  <li><a href="#datasheets" id="toc-datasheets" class="nav-link" data-scroll-target="#datasheets">Datasheets</a></li>
+  <li><a href="#stl-files" id="toc-stl-files" class="nav-link" data-scroll-target="#stl-files">STL Files</a></li>
+  </ul></li>
+  <li><a href="#acknowledgements" id="toc-acknowledgements" class="nav-link" data-scroll-target="#acknowledgements">Acknowledgements</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content"><header id="title-block-header" class="quarto-title-block"></header>
@@ -140,8 +202,41 @@ ul.task-list li input[type="checkbox"] {
 
 
 
+<section id="reference-links" class="level1">
+<h1>Reference Links</h1>
+<section id="helpful-tutorialsinspo" class="level2">
+<h2 class="anchored" data-anchor-id="helpful-tutorialsinspo">Helpful tutorials/inspo</h2>
+<ul>
+<li><a href="https://blog.wokwi.com/learn-servo-motor-using-wokwi-logic-analyzer/">Servo Motor PWM tutorial</a></li>
+<li><a href="https://www.instructables.com/How-to-Make-a-Proximity-Sensor/">IR Proximity Sensor inspo</a></li>
+<li><a href="https://www.youtube.com/watch?v=7WiSeQxb1bU">DFPlayer Mini tutorial</a></li>
+</ul>
+</section>
+<section id="datasheets" class="level2">
+<h2 class="anchored" data-anchor-id="datasheets">Datasheets</h2>
+<ul>
+<li><a href="https://picaxe.com/docs/spe033.pdf">DFPlayer Datasheet</a></li>
+<li><a href="https://www.st.com/resource/en/datasheet/stm32l412c8.pdf">STM32L432KC Datasheet</a></li>
+<li><a href="https://hmc-e155.github.io/assets/doc/FPGA-DS-02008-2-0-iCE40-UltraPlus-Family-Data-Sheet.pdf">iCE40 UltraPlus Family Data Sheet</a></li>
+</ul>
+</section>
+<section id="stl-files" class="level2">
+<h2 class="anchored" data-anchor-id="stl-files">STL Files</h2>
+<ul>
+<li><a href="https://www.google.com/url?q=https://thangs.com/designer/serev3d/3d-model/Toothless%2520Popcorn%2520Bucket%2520-%2520Cute%2520Functional%2520Container%2520-%2520No%2520Supports%25203D%2520Print%2520STL%252F3MF%2520-%2520Multicolor-1179986?srsltid%3DAfmBOorELNO1pAViiqwn7SVjYEa0bkFhM3gSQqvCqB2wc0x1aRdmUiSE&amp;sa=D&amp;source=docs&amp;ust=1765095611653341&amp;usg=AOvVaw1BDeelP-9spyfWYTSy1TtJ">Toothless Popcorn Bucket STL</a></li>
+</ul>
+</section>
+</section>
+<section id="acknowledgements" class="level1">
+<h1>Acknowledgements</h1>
+<p>We’d like to thank everyone who made this project possible.</p>
+<p>Thank you Prof Spencer for pushing us in this class while always being so supportive and understanding.</p>
+<p>Thank you to Xavier Walter for always making time to come help with any computer and electrical issue we could have. This class would not be possible without you.</p>
+<p>Thank you to all the TAs (Neil Chulani, Kavi Dey, Troy Kaufman, and, Vikram Krishna) for helping using with debugging various circuits and pieces of code. In particular, thank you to Kavi for all the help with the Analog-to-Digital Converter (ADC).</p>
 
 
+
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -195,13 +290,14 @@ ul.task-list li input[type="checkbox"] {
       e.clearSelection();
     }
     const getTextToCopy = function(trigger) {
-        const codeEl = trigger.previousElementSibling.cloneNode(true);
-        for (const childEl of codeEl.children) {
-          if (isCodeAnnotation(childEl)) {
-            childEl.remove();
-          }
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
         }
-        return codeEl.innerText;
+      }
+      return codeEl.innerText;
     }
     const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
       text: getTextToCopy
@@ -230,6 +326,8 @@ ul.task-list li input[type="checkbox"] {
           if (link.dataset.originalHref !== undefined) {
             link.href = link.dataset.originalHref;
           }
+            // default icon
+            link.classList.add("external");
         }
       }
     function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
