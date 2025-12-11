@@ -3,6 +3,7 @@ title: "Electrical Schematics and Design"
 ---
 
 # Overall Schematic 
+![Overall electrical schematic for the full circuit. Broken up circuits seen for each sensor and subsytem further down on this page.](images/overallschematic.jpg){#fig-overallschematic}
 
 # MCU Circuits
 ## 1. Capacitive Touch Sensor Circuit
