@@ -1,5 +1,5 @@
 ---
-title: "Toothless Candy Bucket Project"
+title: "THE WORLD AINT FLAT BITCH Toothless Candy Bucket Project"
 about:
     template: jolla
     links:
